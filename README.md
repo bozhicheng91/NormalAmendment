@@ -1,5 +1,5 @@
-NormalAmendment
-法矢修正算法
+#NormalAmendment
+#法矢修正算法
 
 设计语言:C++
 
