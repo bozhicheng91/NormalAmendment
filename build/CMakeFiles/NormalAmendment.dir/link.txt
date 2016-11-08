@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/NormalAmendment.dir/src/main.o  -o NormalAmendment -rdynamic 

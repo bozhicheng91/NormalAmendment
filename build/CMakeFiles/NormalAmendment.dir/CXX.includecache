@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/main.cpp
+iostream
+-
+vecg.h
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/vecg.h
+test.h
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/test.h
+
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/test.h
+vecg.h
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/vecg.h
+type.h
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/type.h
+
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/type.h
+vecg.h
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/vecg.h
+vector
+-
+
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/vecg.h
+iostream
+-
+cfloat
+-
+

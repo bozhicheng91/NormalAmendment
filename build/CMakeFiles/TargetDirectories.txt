@@ -1,0 +1,3 @@
+/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles/edit_cache.dir
+/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles/rebuild_cache.dir
+/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles/NormalAmendment.dir
