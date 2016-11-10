@@ -39,12 +39,15 @@ namespace NA{
     class face{
 
     public:
-         face():v1(-1), v2(-1), v3(-1), flag(-1), id(-1){}
-         face(int v1_, int v2_, int v3_):v1(v1_),v2(v2_),v3(v3_), flag(-1), id(-1){}
+    face():v1(NULL), v2(NULL), v3(NULL),flag(-1), id(-1){}
+
+    face(vertex* v1_, vertex* v2_, vertex* v3_):v1(v1_),v2(v2_),v3(v3_), flag(-1), id(-1){}
 
 
     public:
-         int v1, v2, v3;
+         vertex* v1;
+         vertex* v2;
+         vertex* v3;
          int flag;
          vector<int>edges;
          int id;
@@ -52,7 +55,7 @@ namespace NA{
     private:
          //标准输出面片数据,顶点用id表示
          friend std::ostream& operator<<(std::ostream &os, const face &f){
-              os << f.v1 << " " << f.v2 << " " << f.v3 <<"\t"; return os;
+              os << *f.v1 << " " << *f.v2 << " " << *f.v3 <<"\t"; return os;
          }
          
     };
