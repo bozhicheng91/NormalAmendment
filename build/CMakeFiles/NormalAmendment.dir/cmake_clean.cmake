@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/NormalAmendment.dir/src/type.o"
+  "CMakeFiles/NormalAmendment.dir/src/mesh.o"
   "CMakeFiles/NormalAmendment.dir/src/main.o"
   "NormalAmendment.pdb"
   "NormalAmendment"

@@ -1,109 +1,137 @@
-
 #ifndef __TYPE_H_
 #define __TYPE_H_
 
 #include"vecg.h"
 #include <vector>
+#include <map>
+#include <stdlib.h>
 using namespace std;
 
 
 
 namespace NA{
 
-     class mesh;
+     class VertexAttribute;
+     class EdgeAttribute;
+     class FaceAttribute;
+     // class Mesh;
+   
      //顶点类
-     typedef vec3g<double> Point;
-     class vertex : public Point{
+     typedef vec3g<double> vec3;
+     class Vertex : public vec3{
           
      public:
-          vertex():flag(-1),id(-1){} 
-     vertex(double x_, double y_, double z_):Point(x_,  y_,  z_),flag(-1),id(-1){} 
+          Vertex();
+          Vertex(double x_, double y_, double z_); 
+          ~Vertex();
 
      public:
 
-          int flag;
-          int id;
-          vec3g<double> normal;
-          vector<int>normal_tag;
-          vector<int>edges;
-          vector<int>facets;
-          mesh *mesh_;
-     private:
-          
+          // Mesh *mesh;
+          VertexAttribute* attribute ;
+
+      };
 
 
-     };
-
-
-     //面片类
-    class face{
-
-    public:
-    face():v1(NULL), v2(NULL), v3(NULL),flag(-1), id(-1){}
-
-    face(vertex* v1_, vertex* v2_, vertex* v3_):v1(v1_),v2(v2_),v3(v3_), flag(-1), id(-1){}
-
-
-    public:
-         vertex* v1;
-         vertex* v2;
-         vertex* v3;
-         int flag;
-         vector<int>edges;
-         int id;
-         mesh *mesh_;
-    private:
-         //标准输出面片数据,顶点用id表示
-         friend std::ostream& operator<<(std::ostream &os, const face &f){
-              os << *f.v1 << " " << *f.v2 << " " << *f.v3 <<"\t"; return os;
-         }
-         
-    };
-          
-
+/****************************************/
     //边类
-    class edge{
+    class Edge{
 
 
     public:
-         edge():v1(-1), v2(-1), flag(-1), id(-1){}
-         edge(int v1_, int v2_):v1(v1_),v2(v2_){}
-
+         Edge():v1(NULL), v2(NULL){}
+         Edge(Vertex* v1_, Vertex* v2_):v1(v1_),v2(v2_){}
+         ~Edge();
     public:
-         int v1, v2;
-         int flag;
-         vector<int>edges;
-         int id;
-         mesh *mesh_;
+       
+         Vertex* v1;
+         Vertex* v2;
+         EdgeAttribute* attribute;
+         // Mesh *mesh;
     private:
-         //标准输出面片数据,顶点用id表示
-         friend std::ostream& operator<<(std::ostream &os, const edge &e){
+                  friend std::ostream& operator<<(std::ostream &os, const Edge &e){
               os << e.v1 << " " << e.v2 <<"\t"; return os;
          }
     };
 
-    //网格类
-    class mesh{
-
-    public: 
-         int vertex_size(){return vertex_list->size();}
-         int edge_size(){return edge_list->size();}
-         int face_size(){return face_list->size();}
-
+/****************************************/
+     //面片类
+    class Face{
 
     public:
-         vector<vertex> *vertex_list = new vector<vertex>;
-         vector<face> * face_list = new vector<face>;
-         vector<edge> * edge_list = new vector<edge>;
-   
+         Face();
+         Face(Vertex* v1_, Vertex* v2_, Vertex* v3_);
+         ~Face();
+
+    public:
+    
+         vector<Vertex*>* v;
+         FaceAttribute *attribute;
+         // Mesh *mesh;
+
+    public:
+
+         void inline setValue(Vertex* v1_, Vertex* v2_, Vertex* v3_){ v = new vector<Vertex*> ; v->push_back(v1_);v->push_back(v2_); v->push_back(v3_);  }
+
+
+    private:
+         //标准输出面片数据,顶点用id表示
+         friend std::ostream& operator<<(std::ostream &os, const Face &f){
+              os << *f.v->at(0) << " " << *f.v->at(1) << " " << *f.v->at(2) <<"\t"; return os;
+         }
          
     };
+
+/****************************************/
+    //属性类
+    class VertexAttribute{
+         
+    public:
+
+    VertexAttribute():flag(-1), id(-1){}
+         ~VertexAttribute(){delete faceIncident;}
+
+    public:
+         vector<Face*> *faceIncident = new vector<Face*>;
+         int flag;
+         int id;
+         
+         
+    };
+
+    class EdgeAttribute{
+
+    public:
+    EdgeAttribute():flag(-1), id(-1){}
+
+    public:
+         int flag;
+         int id;
+
+    };
     
+    class FaceAttribute{
+
+    public:
+    FaceAttribute():flag(-1), id(-1){}
+         ~FaceAttribute(){delete normal;}
+
+    public:
+         vec3g<double>* normal = new vec3g<double> ;
+         int flag;
+         int id;
+
+    };
+
+ 
+
+
+
+
+
+
+
 
 
 }
-
-
-
-
 #endif

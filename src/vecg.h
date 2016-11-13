@@ -1,4 +1,3 @@
-
 #ifndef __VECG_H_
 #define __VECG_H_
 
@@ -19,6 +18,10 @@ namespace NA{
                /*主要运算符重载*/
                template<class T1>
                friend std::ostream& operator<<(std::ostream &os, const vec3g<T1> &v){ os << v.x << " " << v.y << " " << v.z <<"\t"; return os;}
+
+               template<class T1>
+               friend std::istream& operator>>(std::istream &is, const vec3g<T1> &v){return is >> v.x >> v.y >> v.z;}
+
 
                inline thisclass operator+ (const thisclass& v) const {return thisclass(x+v.x, y+v.y, z+v.z); }
                inline thisclass operator- (const thisclass& v) const {return thisclass(x-v.x, y-v.y, z-v.z); }
@@ -54,7 +57,7 @@ namespace NA{
                }
         
 
-               void inline set(T x_in, T y_in, T z_in){ x= x_in; y = y_in; z = z_in;}
+               void inline setValue(T x_in, T y_in, T z_in){ x= x_in; y = y_in; z = z_in;}
 
                //成员数据
                T x;

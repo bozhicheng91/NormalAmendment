@@ -2,10 +2,10 @@
 #include"vecg.h"
 #include"test.h"
 
-typedef NA::vec3g<double> vec3;
+//typedef NA::vec3g<double> vec3;
 
 int main()
 {
-    NA::test_vec3g();
+    NA::test_fileload();
 
 }

@@ -5,6 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/bozhicheng/Documents/github-res/NormalAmendment/src/main.cpp" "/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles/NormalAmendment.dir/src/main.o"
+  "/home/bozhicheng/Documents/github-res/NormalAmendment/src/mesh.cpp" "/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles/NormalAmendment.dir/src/mesh.o"
+  "/home/bozhicheng/Documents/github-res/NormalAmendment/src/type.cpp" "/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles/NormalAmendment.dir/src/type.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/line_stream.h
+iostream
+-
+sstream
+-
+
 /home/bozhicheng/Documents/github-res/NormalAmendment/src/main.cpp
 iostream
 -
@@ -14,9 +20,37 @@ vecg.h
 test.h
 /home/bozhicheng/Documents/github-res/NormalAmendment/src/test.h
 
-/home/bozhicheng/Documents/github-res/NormalAmendment/src/test.h
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/mesh.cpp
+mesh.h
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/mesh.h
+iostream
+-
+
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/mesh.h
+vector
+-
+fstream
+-
+map
+-
 vecg.h
 /home/bozhicheng/Documents/github-res/NormalAmendment/src/vecg.h
+line_stream.h
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/line_stream.h
+type.h
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/type.h
+
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/test.h
+mesh.h
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/mesh.h
+type.h
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/type.h
+map
+-
+string
+-
+
+/home/bozhicheng/Documents/github-res/NormalAmendment/src/type.cpp
 type.h
 /home/bozhicheng/Documents/github-res/NormalAmendment/src/type.h
 
@@ -24,6 +58,10 @@ type.h
 vecg.h
 /home/bozhicheng/Documents/github-res/NormalAmendment/src/vecg.h
 vector
+-
+map
+-
+stdlib.h
 -
 
 /home/bozhicheng/Documents/github-res/NormalAmendment/src/vecg.h

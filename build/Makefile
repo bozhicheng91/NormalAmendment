@@ -138,6 +138,36 @@ src/main.s:
 	$(MAKE) -f CMakeFiles/NormalAmendment.dir/build.make CMakeFiles/NormalAmendment.dir/src/main.s
 .PHONY : src/main.s
 
+# target to build an object file
+src/mesh.o:
+	$(MAKE) -f CMakeFiles/NormalAmendment.dir/build.make CMakeFiles/NormalAmendment.dir/src/mesh.o
+.PHONY : src/mesh.o
+
+# target to preprocess a source file
+src/mesh.i:
+	$(MAKE) -f CMakeFiles/NormalAmendment.dir/build.make CMakeFiles/NormalAmendment.dir/src/mesh.i
+.PHONY : src/mesh.i
+
+# target to generate assembly for a file
+src/mesh.s:
+	$(MAKE) -f CMakeFiles/NormalAmendment.dir/build.make CMakeFiles/NormalAmendment.dir/src/mesh.s
+.PHONY : src/mesh.s
+
+# target to build an object file
+src/type.o:
+	$(MAKE) -f CMakeFiles/NormalAmendment.dir/build.make CMakeFiles/NormalAmendment.dir/src/type.o
+.PHONY : src/type.o
+
+# target to preprocess a source file
+src/type.i:
+	$(MAKE) -f CMakeFiles/NormalAmendment.dir/build.make CMakeFiles/NormalAmendment.dir/src/type.i
+.PHONY : src/type.i
+
+# target to generate assembly for a file
+src/type.s:
+	$(MAKE) -f CMakeFiles/NormalAmendment.dir/build.make CMakeFiles/NormalAmendment.dir/src/type.s
+.PHONY : src/type.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -150,6 +180,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/mesh.o"
+	@echo "... src/mesh.i"
+	@echo "... src/mesh.s"
+	@echo "... src/type.o"
+	@echo "... src/type.i"
+	@echo "... src/type.s"
 .PHONY : help
 
 

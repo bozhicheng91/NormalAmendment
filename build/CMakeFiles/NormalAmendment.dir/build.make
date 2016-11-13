@@ -57,9 +57,57 @@ include CMakeFiles/NormalAmendment.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/NormalAmendment.dir/flags.make
 
+CMakeFiles/NormalAmendment.dir/src/type.o: CMakeFiles/NormalAmendment.dir/flags.make
+CMakeFiles/NormalAmendment.dir/src/type.o: ../src/type.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NormalAmendment.dir/src/type.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NormalAmendment.dir/src/type.o -c /home/bozhicheng/Documents/github-res/NormalAmendment/src/type.cpp
+
+CMakeFiles/NormalAmendment.dir/src/type.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NormalAmendment.dir/src/type.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bozhicheng/Documents/github-res/NormalAmendment/src/type.cpp > CMakeFiles/NormalAmendment.dir/src/type.i
+
+CMakeFiles/NormalAmendment.dir/src/type.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NormalAmendment.dir/src/type.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bozhicheng/Documents/github-res/NormalAmendment/src/type.cpp -o CMakeFiles/NormalAmendment.dir/src/type.s
+
+CMakeFiles/NormalAmendment.dir/src/type.o.requires:
+
+.PHONY : CMakeFiles/NormalAmendment.dir/src/type.o.requires
+
+CMakeFiles/NormalAmendment.dir/src/type.o.provides: CMakeFiles/NormalAmendment.dir/src/type.o.requires
+	$(MAKE) -f CMakeFiles/NormalAmendment.dir/build.make CMakeFiles/NormalAmendment.dir/src/type.o.provides.build
+.PHONY : CMakeFiles/NormalAmendment.dir/src/type.o.provides
+
+CMakeFiles/NormalAmendment.dir/src/type.o.provides.build: CMakeFiles/NormalAmendment.dir/src/type.o
+
+
+CMakeFiles/NormalAmendment.dir/src/mesh.o: CMakeFiles/NormalAmendment.dir/flags.make
+CMakeFiles/NormalAmendment.dir/src/mesh.o: ../src/mesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NormalAmendment.dir/src/mesh.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NormalAmendment.dir/src/mesh.o -c /home/bozhicheng/Documents/github-res/NormalAmendment/src/mesh.cpp
+
+CMakeFiles/NormalAmendment.dir/src/mesh.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NormalAmendment.dir/src/mesh.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bozhicheng/Documents/github-res/NormalAmendment/src/mesh.cpp > CMakeFiles/NormalAmendment.dir/src/mesh.i
+
+CMakeFiles/NormalAmendment.dir/src/mesh.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NormalAmendment.dir/src/mesh.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bozhicheng/Documents/github-res/NormalAmendment/src/mesh.cpp -o CMakeFiles/NormalAmendment.dir/src/mesh.s
+
+CMakeFiles/NormalAmendment.dir/src/mesh.o.requires:
+
+.PHONY : CMakeFiles/NormalAmendment.dir/src/mesh.o.requires
+
+CMakeFiles/NormalAmendment.dir/src/mesh.o.provides: CMakeFiles/NormalAmendment.dir/src/mesh.o.requires
+	$(MAKE) -f CMakeFiles/NormalAmendment.dir/build.make CMakeFiles/NormalAmendment.dir/src/mesh.o.provides.build
+.PHONY : CMakeFiles/NormalAmendment.dir/src/mesh.o.provides
+
+CMakeFiles/NormalAmendment.dir/src/mesh.o.provides.build: CMakeFiles/NormalAmendment.dir/src/mesh.o
+
+
 CMakeFiles/NormalAmendment.dir/src/main.o: CMakeFiles/NormalAmendment.dir/flags.make
 CMakeFiles/NormalAmendment.dir/src/main.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NormalAmendment.dir/src/main.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NormalAmendment.dir/src/main.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NormalAmendment.dir/src/main.o -c /home/bozhicheng/Documents/github-res/NormalAmendment/src/main.cpp
 
 CMakeFiles/NormalAmendment.dir/src/main.i: cmake_force
@@ -83,15 +131,19 @@ CMakeFiles/NormalAmendment.dir/src/main.o.provides.build: CMakeFiles/NormalAmend
 
 # Object files for target NormalAmendment
 NormalAmendment_OBJECTS = \
+"CMakeFiles/NormalAmendment.dir/src/type.o" \
+"CMakeFiles/NormalAmendment.dir/src/mesh.o" \
 "CMakeFiles/NormalAmendment.dir/src/main.o"
 
 # External object files for target NormalAmendment
 NormalAmendment_EXTERNAL_OBJECTS =
 
+NormalAmendment: CMakeFiles/NormalAmendment.dir/src/type.o
+NormalAmendment: CMakeFiles/NormalAmendment.dir/src/mesh.o
 NormalAmendment: CMakeFiles/NormalAmendment.dir/src/main.o
 NormalAmendment: CMakeFiles/NormalAmendment.dir/build.make
 NormalAmendment: CMakeFiles/NormalAmendment.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable NormalAmendment"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bozhicheng/Documents/github-res/NormalAmendment/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable NormalAmendment"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NormalAmendment.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -99,6 +151,8 @@ CMakeFiles/NormalAmendment.dir/build: NormalAmendment
 
 .PHONY : CMakeFiles/NormalAmendment.dir/build
 
+CMakeFiles/NormalAmendment.dir/requires: CMakeFiles/NormalAmendment.dir/src/type.o.requires
+CMakeFiles/NormalAmendment.dir/requires: CMakeFiles/NormalAmendment.dir/src/mesh.o.requires
 CMakeFiles/NormalAmendment.dir/requires: CMakeFiles/NormalAmendment.dir/src/main.o.requires
 
 .PHONY : CMakeFiles/NormalAmendment.dir/requires
