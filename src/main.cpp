@@ -6,6 +6,6 @@
 
 int main()
 {
-    NA::test_fileload();
+    NA::test_traverse();
 
 }

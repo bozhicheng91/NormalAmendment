@@ -25,6 +25,8 @@ namespace NA{
           Vertex(double x_, double y_, double z_); 
           ~Vertex();
 
+          void faceOrientation();
+
      public:
 
           // Mesh *mesh;
@@ -72,7 +74,10 @@ namespace NA{
     public:
 
          void inline setValue(Vertex* v1_, Vertex* v2_, Vertex* v3_){ v = new vector<Vertex*> ; v->push_back(v1_);v->push_back(v2_); v->push_back(v3_);  }
+         void setVertexNormal();
+         void setVertexFlag();
 
+         void setFaceNormal();
 
     private:
          //标准输出面片数据,顶点用id表示
@@ -89,10 +94,11 @@ namespace NA{
     public:
 
     VertexAttribute():flag(-1), id(-1){}
-         ~VertexAttribute(){delete faceIncident;}
+         ~VertexAttribute(){delete faceIncident; delete normal;}
 
     public:
          vector<Face*> *faceIncident = new vector<Face*>;
+         vec3g<double>* normal = new vec3g<double> ;
          int flag;
          int id;
          
@@ -113,23 +119,25 @@ namespace NA{
     class FaceAttribute{
 
     public:
-    FaceAttribute():flag(-1), id(-1){}
-         ~FaceAttribute(){delete normal;}
-
+         FaceAttribute():flag(-1), id(-1){}
+         ~FaceAttribute(){delete normal; delete normal_;  delete state;}
+         void calculateNormal(){
+              *normal_ = *normal;
+              for(auto itera = state->begin(); itera != state->end(); itera++){
+                   int i = *itera;
+                   *normal_ = (*normal_)*i;
+                   
+             }
+              
+         }
     public:
          vec3g<double>* normal = new vec3g<double> ;
+         vec3g<double>* normal_ = new vec3g<double> ;
+         vector<int>* state = new vector<int>;
          int flag;
          int id;
 
     };
-
- 
-
-
-
-
-
-
 
 
 

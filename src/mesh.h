@@ -25,9 +25,15 @@ namespace NA{
           int vertex_size(){return vertex_list->size();}
           int edge_size(){return edge_list->size();}
           int face_size(){return face_list->size();}
+       
           Vertex* is_exist(const vec3* v);
+         
           unsigned int STL_load(const std::string& filename);
           unsigned int OBJ_load(const std::string& filename);
+          unsigned int STL_write(const std::string& filename);
+
+          void traverse_mesh(Vertex* vertex);
+          
 
      public:
           vector<Vertex*> *vertex_list = new vector<Vertex*>;

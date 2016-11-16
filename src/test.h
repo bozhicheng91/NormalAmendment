@@ -15,7 +15,7 @@ namespace NA{
      void test_map();
      
      void test_fileload();
-
+     void test_traverse();
 
 
 }
@@ -108,7 +108,7 @@ void NA::test_map(){
 void NA::test_fileload()
 {
 
-     string filename = "../data/rabbit.stl";
+     string filename = "../data/test.stl";
      NA::Mesh mesh;
      mesh.STL_load(filename);
      
@@ -120,8 +120,26 @@ void NA::test_fileload()
 
      }
      
-    
- 
+}
+
+
+void NA::test_traverse()
+{
+     string filename = "../data/rabbit-mycoco.stl";
+     NA::Mesh mesh;
+     mesh.STL_load(filename);
+
+     vector<Face*>* f_ = mesh.vertex_list->at(0)->attribute->faceIncident;
+     Vertex *v = mesh.vertex_list->at(500);
+     std::cout << *v << std::endl;
+     
+     
+
+     v->attribute->normal->setValue(0, 0, 1);
+     mesh.traverse_mesh(v);
+     string filename_write = "../data/result.stl";
+     mesh.STL_write(filename_write);
+
 }
 
   

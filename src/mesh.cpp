@@ -1,5 +1,6 @@
 #include "mesh.h"
 #include <iostream>
+#include <algorithm>
 
 namespace NA{
 
@@ -123,6 +124,87 @@ namespace NA{
     unsigned int OBJ_load(const std::string& filename){
         
     }
+
+
+    /*输出STL文件*/
+    unsigned int Mesh::STL_write(const std::string& filename){
+
+        std::ofstream out(filename.c_str()) ;
+        if(!out) {
+            std::cerr << "could not open file." << std::endl ;         
+            return 0 ;
+        }
+
+        out << "soild mesh"<< std::endl;
+        for(auto iter = face_list->begin(); iter != face_list->end(); iter++){
+        
+            Face* f = *iter;
+            out << "facet normal " << *f->attribute->normal_ << std::endl;
+            out << "outer loop " << std::endl;
+            out << "vertex " << *f->v->at(0)<< std::endl;
+            out << "vertex " << *f->v->at(1)<< std::endl;
+            out << "vertex " << *f->v->at(2)<< std::endl;
+            out << "endloop" << std::endl;
+            out << "endfacet" << std::endl;
+        }
+        out << "endsoild mesh" << std::endl;
+
+    }
+
+
+    void Mesh::traverse_mesh(Vertex* vertex){
+
+        vector<Vertex*> vlist_;
+        vlist_.push_back(vertex);
+        vector<Vertex*> vlist_tmp;
+        
+        while(vlist_.size() > 0){
+
+            // std::cout << "the loop " << loop << " date is " << std::endl;
+            for(auto itera = vlist_.begin(); itera != vlist_.end(); itera++ ){
+                Vertex* v_ = *itera;
+                vector<Face*> *flist_incident = v_->attribute->faceIncident;
+
+                v_->faceOrientation();
+                v_->attribute->flag = 1;
+                for(auto iterb = flist_incident->begin(); iterb != flist_incident->end(); iterb++){
+                    Face* f_ = *iterb;
+                    f_->setVertexNormal();
+                    //f_->setVertexFlag();
+                    f_->attribute->flag = 1;
+                    
+                }
+                
+                for(auto iterb_ = flist_incident->begin(); iterb_ != flist_incident->end(); iterb_++){
+                    Face* f1_ = *iterb_;
+                    int i = 0;
+                    for(; i < 3; i++){
+                        Vertex* f1_v = f1_->v->at(i%3);
+                        if((f1_v != v_)&&(f1_v->attribute->flag != 1))
+                            vlist_tmp.push_back(f1_v);
+                    }
+                }
+                
+            }
+            
+            //删除传播环中的重复点
+            sort(vlist_tmp.begin(), vlist_tmp.end());
+            vlist_tmp.erase(unique(vlist_tmp.begin(), vlist_tmp.end()), vlist_tmp.end());
+        
+            for(auto iterc = vlist_tmp.begin(); iterc != vlist_tmp.end(); iterc++){
+                Vertex* v_tmp = *iterc;
+                v_tmp->attribute->flag = 1;                            //  std::cout << *v_tmp << std::endl;
+            }
+        
+            //更新波前环
+            vlist_.swap(vlist_tmp);
+            vector<Vertex*>().swap(vlist_tmp);
+
+            // std::cout << vlist_.size() << std::endl;
+
+        }
+    }
+
   
   
 }
