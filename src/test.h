@@ -125,17 +125,17 @@ void NA::test_fileload()
 
 void NA::test_traverse()
 {
-     string filename = "../data/rabbit-mycoco.stl";
+
+     string filename = "../data/venus.stl";
      NA::Mesh mesh;
      mesh.STL_load(filename);
 
-     vector<Face*>* f_ = mesh.vertex_list->at(0)->attribute->faceIncident;
-     Vertex *v = mesh.vertex_list->at(500);
+     //选择法向重定向的起点
+     Vertex *v = mesh.vertex_list->at(1000);
      std::cout << *v << std::endl;
      
-     
-
-     v->attribute->normal->setValue(0, 0, 1);
+     //为起点设置一个参考方向
+     v->attribute->normal->setValue(0, 0, -1);
      mesh.traverse_mesh(v);
      string filename_write = "../data/result.stl";
      mesh.STL_write(filename_write);
